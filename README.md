@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/vesica/php74.svg?style=shield)](https://circleci.com/gh/vesica/php74)
-[![](https://img.shields.io/github/license/vesica/php74.svg)](https://github.com/vesica/php74/blob/master/LICENSE.txt)
-![Docker Pulls](https://img.shields.io/docker/pulls/vesica/php74)
+[![CircleCI](https://circleci.com/gh/islamic-network/php74.svg?style=shield)](https://circleci.com/gh/islamic-network/php74)
+[![](https://img.shields.io/github/license/islamic-network/php74.svg)](https://github.com/islamic-network/php74/blob/master/LICENSE.txt)
+![Docker Pulls](https://img.shields.io/docker/pulls/islamic-network/php74)
 
 # Work in Progress
 
@@ -19,12 +19,12 @@ The Apache document root in the container is /var/www/html and Apache is exposed
 For production use, without XDebug:
 
 ```
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html quay.io/vesica/php74:latest
+docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html quay.io/islamic-network/php74:latest
 ```
 
 or with XDebug:
 ```
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html quay.io/vesica/php74:dev
+docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html quay.io/islamic-network/php74:dev
 ```
 
 ## Build to use as a development environment (i.e., with XDebug):
@@ -41,8 +41,8 @@ docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html p
 
 
 ## Publish Images
-Run ```sh build.sh``` to update quay.io/vesica/php74:latest and vesica/php74:latest (https://hub.docker.com/r/vesica/php72/) as well as the version specified in that file.
-Running ```build.sh``` will also create quay.io/vesica/php74:dev and vesica/php74:dev on hub.docker.com which is basically the same image with XDebug.
+Run ```sh build.sh``` to update quay.io/islamic-network/php74:latest and islamic-network/php74:latest (https://hub.docker.com/r/islamic-network/php72/) as well as the version specified in that file.
+Running ```build.sh``` will also create quay.io/islamic-network/php74:dev and islamic-network/php74:dev on hub.docker.com which is basically the same image with XDebug.
 
 Please specify the appropriate version for the version number variable in build.sh.
 
