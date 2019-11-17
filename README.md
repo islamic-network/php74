@@ -19,12 +19,12 @@ The Apache document root in the container is /var/www/html and Apache is exposed
 For production use, without XDebug:
 
 ```
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html quay.io/islamic-network/php74:latest
+docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html islamicnetwork/php74:latest
 ```
 
 or with XDebug:
 ```
-docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html quay.io/islamic-network/php74:dev
+docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html islamicnetwork/php74:dev
 ```
 
 ## Build to use as a development environment (i.e., with XDebug):
