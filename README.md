@@ -40,11 +40,8 @@ docker run -d -p 8080:8080 -it --name=php -v $(pwd)/var/www/html:/var/www/html p
 ```
 
 
-## Publish Images
-Run ```sh build.sh``` to update quay.io/islamic-network/php74:latest and islamic-network/php74:latest (https://hub.docker.com/r/islamic-network/php72/) as well as the version specified in that file.
-Running ```build.sh``` will also create quay.io/islamic-network/php74:dev and islamic-network/php74:dev on hub.docker.com which is basically the same image with XDebug.
-
-Please specify the appropriate version for the version number variable in build.sh.
+## Published Images
+islamicnetwork/php74:latest (https://hub.docker.com/r/islamicnetwork/php74/). 
 
 ## Using Docker Secrets
 This image now supports Docker Swarm Secrets via a modification of https://github.com/rbdiang/docker-secrets-example.
