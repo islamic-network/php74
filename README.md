@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/islamic-network/php74.svg?style=shield)](https://circleci.com/gh/islamic-network/php74)
 [![](https://img.shields.io/github/license/islamic-network/php74.svg)](https://github.com/islamic-network/php74/blob/master/LICENSE.txt)
-![Docker Pulls](https://img.shields.io/docker/pulls/islamic-network/php74)
+![Docker Pulls](https://img.shields.io/docker/pulls/islamicnetwork/php74)
 
 # Work in Progress
 
