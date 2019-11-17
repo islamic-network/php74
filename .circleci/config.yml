@@ -78,7 +78,7 @@ workflows:
             branches:
               only: master
       - publish-production:
-          context: Docker Hub
+          context: org-global
           requires:
             - build-production
           filters:
@@ -92,7 +92,7 @@ workflows:
             branches:
               only: master
       - publish-dev:
-          context: Docker Hub
+          context: org-global
           requires:
             - build-production
             - publish-production
