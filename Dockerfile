@@ -1,4 +1,4 @@
-FROM php:7.4-rc-apache
+FROM php:7.4-apache
 
 # Setup Debian
 RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
