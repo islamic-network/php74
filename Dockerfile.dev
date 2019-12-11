@@ -1,4 +1,4 @@
-FROM quay.io/vesica/php72
+FROM islamicnetwork/php74
 
 ### DEV ENVIRONMENT SPECIFIC ###
 ################################
