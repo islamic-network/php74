@@ -2,8 +2,6 @@
 [![](https://img.shields.io/github/license/islamic-network/php74.svg)](https://github.com/islamic-network/php74/blob/master/LICENSE.txt)
 ![Docker Pulls](https://img.shields.io/docker/pulls/islamicnetwork/php74)
 
-# Work in Progress
-
 # PHP 7.4 Docker Image with Apache
 
 This repository produces a PHP 7.4 Image with Apache 2.4, ready for production use.
