@@ -8,7 +8,7 @@ This repository produces a PHP 7.4 Image with Apache 2.4, ready for production u
 
 It is based on the official PHP 7.4 Docker Image and runs Debian.
 
-It will work with OpenShift Online, Sloppy.io or any other Docker hosts.
+It will work with OpenShift Online, Sloppy.io or any other Docker hosts. 
 
 The Apache document root in the container is /var/www/html and Apache is exposed on port 8080.
 
