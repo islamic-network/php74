@@ -31,6 +31,7 @@ RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
         git \
         gcc \
         g++ \
+        librdkafka-dev \
         autoconf \
         libc-dev \
         pkg-config \ 
@@ -40,10 +41,11 @@ RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
     && pecl install memcached \
     && pecl install timezonedb \
     && pecl install grpc \
-    && docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/ --with-jpeg-dir=/usr/include/  \
+    && pecl install rdkafka \
+    && docker-php-ext-configure gd --with-gd --with-freetype --with-jpeg  \
     && docker-php-ext-configure zip --with-libzip \
     && docker-php-ext-install gd calendar gmp ldap sysvmsg pcntl iconv bcmath xml mbstring pdo tidy gettext intl pdo_mysql mysqli simplexml xml xsl xmlwriter zip opcache exif sockets \
-    && docker-php-ext-enable redis geoip apcu memcached timezonedb grpc \
+    && docker-php-ext-enable redis geoip apcu memcached timezonedb grpc rdkafka \
     && printf "log_errors = On \nerror_log = /dev/stderr\n" > /usr/local/etc/php/conf.d/php-logs.ini
 
 # Apache settings
