@@ -1,0 +1,65 @@
+FROM php:7.4-cli
+
+# Setup Debian
+RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
+        unzip \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libmemcached-dev \
+        libzip-dev \
+        libgeoip-dev \
+        libxml2-dev \
+        libxslt-dev \
+        libtidy-dev \
+        libssl-dev \
+        zlib1g-dev \
+        libpng-dev \
+        libwebp-dev \
+        libgmp-dev \
+        libjpeg-dev \
+        libfreetype6-dev \
+        libaio1 \
+        libldap2-dev \
+        libonig-dev \
+        apt-file \
+        wget \
+        vim \
+        gnupg \
+        gnupg2 \
+        zip \
+        git \
+        gcc \
+        g++ \
+        librdkafka-dev \
+        autoconf \
+        libc-dev \
+        pkg-config \ 
+    && pecl install redis \
+    && pecl install geoip-1.1.1 \
+    && pecl install apcu \
+    && pecl install memcached \
+    && pecl install timezonedb \
+    && pecl install grpc \
+    && pecl install rdkafka \
+    && docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
+    && docker-php-ext-install gd calendar gmp ldap sysvmsg pcntl iconv bcmath xml mbstring pdo tidy gettext intl pdo_mysql mysqli simplexml xml xsl xmlwriter zip opcache exif sockets \
+    && docker-php-ext-enable redis geoip apcu memcached timezonedb grpc rdkafka \
+    && printf "log_errors = On \nerror_log = /dev/stderr\n" > /usr/local/etc/php/conf.d/php-logs.ini
+
+
+# PHP settings
+COPY etc/php/production.ini /usr/local/etc/php/conf.d/production.ini
+
+# Composer
+RUN mkdir -p /usr/local/ssh
+COPY etc/ssh/* /usr/local/ssh/
+RUN sh /usr/local/ssh/install-composer.sh && \
+    mv composer.phar /usr/local/bin/composer
+
+### PROD ENVIRONMENT SPECIFIC ###
+################################
+
+ENV PROVISION_CONTEXT "cli"
+
+################################
