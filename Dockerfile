@@ -35,6 +35,9 @@ RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
         autoconf \
         libc-dev \
         pkg-config \ 
+        libc-client-dev \
+        libkrb5-dev \
+    && rm -r /var/lib/apt/lists/* \
     && pecl install redis \
     && pecl install geoip-1.1.1 \
     && pecl install apcu \
@@ -42,7 +45,7 @@ RUN apt-get upgrade && apt-get update && ACCEPT_EULA=Y && apt-get install -y \
     && pecl install timezonedb \
     && pecl install grpc \
     && pecl install rdkafka \
-    && docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
+    && docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg --with-imap-ssl \
     && docker-php-ext-install gd calendar gmp ldap sysvmsg pcntl iconv bcmath xml mbstring pdo tidy gettext intl pdo_mysql mysqli simplexml xml xsl xmlwriter zip opcache exif sockets imap \
     && docker-php-ext-enable redis geoip apcu memcached timezonedb grpc rdkafka \
     && printf "log_errors = On \nerror_log = /dev/stderr\n" > /usr/local/etc/php/conf.d/php-logs.ini
